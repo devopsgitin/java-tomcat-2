@@ -7,6 +7,9 @@ services:
     networks:
       - jt
     deploy:
+      placement:
+        constraints:
+          - "node.role==worker"
       replicas: 6
       update_config:
         parallelism: 2
