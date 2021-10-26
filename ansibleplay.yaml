@@ -5,7 +5,7 @@
     tasks:
       - name: Copy Deploy File
         copy:
-          src: deploy.yaml
+          src: update.yaml
           dest: /home/ubuntu/deploy.yaml
       - name: Deploy Stack
-        shell: docker stack deploy --compose-file deploy.yaml myapp1
+        shell: docker stack deploy --compose-file update.yaml myapp1

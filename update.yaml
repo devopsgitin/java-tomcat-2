@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  java_tomcat:
+    image: devopsdock1/java_tomcat
+    ports:
+      - 1010:8080
+    networks:
+      - jt
+    deploy:
+      replicas: 6
+      update_config:
+        parallelism: 2
+        delay: 10s
+        order: stop-first
+networks:
+  jt:
