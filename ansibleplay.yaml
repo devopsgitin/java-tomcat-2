@@ -1,0 +1,11 @@
+---
+  - name: First Time Deploy
+    hosts: node1
+    gather_facts: false
+    tasks:
+      - name: Copy Deploy File
+        copy:
+          src: deploy.yaml
+          dest: /home/ubuntu/deploy.yaml
+      - name: Deploy Stack
+        shell: docker stack deploy --compose-file deploy.yaml myapp1

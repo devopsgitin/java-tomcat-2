@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  java_tomcat:
+    image: devopsdock1/java_tomcat
+    ports:
+      - 1010:8080
+    networks:
+      - jt
+    deploy:
+      placement:
+        constraints:
+          - "node.role==worker"
+      mode: replicated
+      replicas: 3
+networks:
+  jt:
