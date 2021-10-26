@@ -6,6 +6,6 @@
       - name: Copy Deploy File
         copy:
           src: update.yaml
-          dest: /home/ubuntu/deploy.yaml
+          dest: /home/ubuntu/update.yaml
       - name: Deploy Stack
         shell: docker stack deploy --compose-file update.yaml myapp1
