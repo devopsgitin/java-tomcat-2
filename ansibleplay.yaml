@@ -3,6 +3,8 @@
     hosts: node1
     gather_facts: false
     tasks:
+      - name: Remove Old Update File
+        shell: rm -rf /home/ubuntu/update.yaml 
       - name: Copy Deploy File
         copy:
           src: update.yaml
